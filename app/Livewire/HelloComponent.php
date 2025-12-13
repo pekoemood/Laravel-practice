@@ -1,38 +1,34 @@
 <?php
-
 namespace App\Livewire;
 
 use Livewire\Component;
 
 class HelloComponent extends Component {
-    public $message = "";
-    public $name = "";
-    public $pass = "";
-    public $check = "";
+    public $message = '';
+    public $input = '';
 
+    //マウント時のイベント処理
     public function mount() {
-        $this->message = 'Event hook';
-        $this->name = 'no name';
-        $this->check = 'no check.';
+        $this->message = '内部コンポーネントの利用';
     }
 
-    public function updating($propertyName) {
-        $this->check = $propertyName;
+    //buttonクリックイベント処理
+    public function doAction() {
+        $this->triggerChildEvent($this->input);
     }
 
-    public function updatingName($propertyValue) {
-        $this->message = 'update: ' . $this->check . '="' . $propertyValue . '"';
-    }
-
-    public function updatingPass($propertyValue) {
-        $this->message = 'update:' . $this->check . '="' . $propertyValue . '"';
-    }
-
-    public function updateMessage() {
-        // not used;
+    // 子コンポーネントにイベントを送るメソッド
+    public function triggerChildEvent($msg) {
+        $this->dispatch('child-event', $msg);
     }
 
     public function render() {
-        return view('livewire.hello-component');
+        $alert = [
+            'alert_title' => '重要なお知らせ',
+            'alert_content' => 'システムからの重要な通知です。'
+        ];
+        return view('livewire.hello-component', $alert);
     }
+
+
 }

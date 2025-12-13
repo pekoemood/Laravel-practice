@@ -1,6 +1,6 @@
 @extends('layouts.helloapp')
 
-@section('title', 'Index')
+@section('title', 'インデックス')
 
 @section('menubar')
   @parent
@@ -11,3 +11,4 @@
   <p>Livewireコンポーネントの表示</p>
   @livewire('hello-component')
 @endsection
+
