@@ -9,7 +9,7 @@ class HelloComponent extends Component {
 
     //マウント時のイベント処理
     public function mount() {
-        $this->message = '内部コンポーネントの利用';
+        $this->message = '内部コンポーネントのmessageMount';
     }
 
     //buttonクリックイベント処理
