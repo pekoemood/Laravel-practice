@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller {
     public function index(Request $request) {
-        $id = $request->id;
+        $id = $request->id ?? 1;
         return view('hello.index', ['id' => $id]);
     }
 
