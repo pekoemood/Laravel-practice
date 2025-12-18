@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Livewire\HelloComponent;
+use App\Http\Middleware\HelloMiddleware;
 
 
 Route::get('/', function () {

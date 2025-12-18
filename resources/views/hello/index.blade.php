@@ -8,10 +8,7 @@
 @endsection
 
 @section('content')
-  <h2>コンポーネント</h2>
-  <x-package-message id="{{$id}}">
-    <p>＊これはコンポーネント内に追加したコンテンツです。</p>
-  </x-package-message>
-  <p>*上がコンポーネントの表示です。</p>
+  <p>Livewireコンポーネントの表示</p>
+  @livewire('hello-component')
 @endsection
 

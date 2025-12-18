@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HelloRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class HelloController extends Controller {
     public function index(Request $request) {
-        $id = $request->id ?? 1;
-        return view('hello.index', ['id' => $id]);
+        return view('hello.index', ['msg' => 'フォームを入力']);
     }
 
-    public function post(Request $request) {
-        return view('hello.index', ['msg' => $request->msg]);
+    public function post(HelloRequest $request) {
+      return view('hello.index', ['msg' => '正しく入力されました']);
     }
 }
