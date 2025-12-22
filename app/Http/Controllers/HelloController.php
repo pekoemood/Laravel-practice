@@ -68,5 +68,7 @@ class HelloController extends Controller {
       return redirect('/hello');
     }
 
+    public function next
+
 
 }
