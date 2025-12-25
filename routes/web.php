@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\PersonController;
 use App\Livewire\HelloComponent;
 use App\Http\Middleware\HelloMiddleware;
 
@@ -26,3 +27,5 @@ Route::get('/hello/del', [HelloController::class, 'delete']);
 Route::post('/hello/del', [HelloController::class, 'remove']);
 
 Route::get('/hello/show', [HelloController::class, 'show']);
+
+Route::get('person', [PersonController::class, 'index']);
