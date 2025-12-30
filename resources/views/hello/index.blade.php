@@ -1,6 +1,21 @@
 @extends('layouts.helloapp')
 
-@section('title', 'インデックス')
+
+  <style>
+    nav { margin: 10px 0px; }
+    nav span { margin: 5px; font-size: 12pt; }
+    nav a { margin: 5px; font-size: 12pt; }
+    tr th a:link { color: white; }
+    tr th a:visited { color: white; }
+    tr th a:hover { color: white; }
+    tr th a:active { color: white; }
+    nav { margin: 10px; }
+    nav div { margin: 0px; font-size: 12pt; }
+    svg { width: 25px; height: 25px; margin-bottom: -7px; }
+  </style>
+
+
+@section('title', 'Index')
 
 @section('menubar')
   @parent
@@ -11,9 +26,9 @@
   <table>
     <thead>
       <tr>
-      <th>Name</th>
-      <th>Mail</th>
-      <th>Age</th>
+      <th><a href="/hello?sort=name">name</a></th>
+      <th><a href="/hello?sort=mail">mail</a></th>
+      <th><a href="/hello?sort=age">age</a></th>
     </tr>
     </thead>
     <tbody>
@@ -26,5 +41,6 @@
     @endforeach
     </tbody>
   </table>
+  {{ $items->appends(['sort' => $sort])->links() }}
 @endsection
 
