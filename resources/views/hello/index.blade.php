@@ -29,6 +29,7 @@
       <th><a href="/hello?sort=name">name</a></th>
       <th><a href="/hello?sort=mail">mail</a></th>
       <th><a href="/hello?sort=age">age</a></th>
+      <th>趣味</th>
     </tr>
     </thead>
     <tbody>
@@ -37,6 +38,7 @@
         <td>{{ $item->name }}</td>
         <td>{{ $item->mail }}</td>
         <td>{{ $item->age }}</td>
+        <td>パソコンいじり</td>
       </tr>
     @endforeach
     </tbody>
