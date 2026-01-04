@@ -16,7 +16,7 @@ class HelloController extends Controller {
         'items' => $items,
         'sort' => $sort,
       ];
-      return view('hello.index', $param);
+      return view('hello.index', compact('items', 'sort'));
     }
 
     public function post(Request $request) {
