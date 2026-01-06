@@ -5,9 +5,11 @@ namespace App\Models;
 use App\Scopes\ScopePerson;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Person extends Model
 {
+  use HasFactory;
   public $timestamps = false;
   public $guarded = ['id'];
 
@@ -41,10 +43,10 @@ class Person extends Model
       return $query->where('age', '<=', $n);
     }
 
-    protected static function boot() {
-      parent::boot();
-      static::addGlobalScope(new ScopePerson);
-    }
+    // protected static function boot() {
+    //   parent::boot();
+    //   static::addGlobalScope(new ScopePerson);
+    // }
 
     public function boards() {
       return $this->hasMany('App\Models\Board');
